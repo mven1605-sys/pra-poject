@@ -1,0 +1,272 @@
+/**
+ * Dark Mode Styles
+ * File: assets/css/darkmode.css
+ * Theme variables dan dark mode styles
+ */
+
+/* Light Theme (Default) */
+:root[data-theme="light"] {
+    --bg-primary: #f8f9fc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f8f9fc;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --border-color: #e3e6f0;
+    --shadow-sm: rgba(0, 0, 0, 0.05);
+    --shadow-md: rgba(0, 0, 0, 0.08);
+    --shadow-lg: rgba(0, 0, 0, 0.1);
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+    --card-bg: #ffffff;
+    --sidebar-bg: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    --alert-info-bg: #d1ecf1;
+    --alert-info-text: #0c5460;
+    --table-hover: #f8f9fc;
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+    --bg-primary: #1a1d29;
+    --bg-secondary: #22252f;
+    --bg-tertiary: #2a2d3a;
+    --text-primary: #e4e6eb;
+    --text-secondary: #b0b3b8;
+    --text-muted: #8a8d91;
+    --border-color: #3a3d4a;
+    --shadow-sm: rgba(0, 0, 0, 0.3);
+    --shadow-md: rgba(0, 0, 0, 0.4);
+    --shadow-lg: rgba(0, 0, 0, 0.5);
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+    --card-bg: #22252f;
+    --sidebar-bg: linear-gradient(180deg, #4a5d8c 0%, #5a4472 100%);
+    --alert-info-bg: #1f3d47;
+    --alert-info-text: #9ed4e6;
+    --table-hover: #2a2d3a;
+}
+
+/* Apply theme to body and main elements */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cards */
+.card-custom,
+.top-navbar,
+.card,
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: 0 2px 10px var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--sidebar-bg);
+}
+
+/* Text colors */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+/* Borders */
+.border,
+.border-top,
+.border-bottom,
+.border-left,
+.border-right {
+    border-color: var(--border-color) !important;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--gradient-start);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* Tables */
+.table {
+    color: var(--text-primary);
+}
+
+.table thead {
+    background-color: var(--bg-tertiary);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+.table-bordered {
+    border-color: var(--border-color);
+}
+
+.table-bordered td,
+.table-bordered th {
+    border-color: var(--border-color);
+}
+
+/* Alerts */
+.alert-info {
+    background-color: var(--alert-info-bg);
+    color: var(--alert-info-text);
+    border-color: var(--border-color);
+}
+
+/* Specific components */
+.riwayat-item,
+.activity-item,
+.jadwal-card,
+.upload-box,
+.faq-item {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.upload-box:hover,
+.faq-item:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.summary-box,
+.filter-section {
+    background-color: var(--bg-tertiary);
+}
+
+/* Modal */
+.modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+.modal-footer {
+    border-top-color: var(--border-color);
+}
+
+.btn-close {
+    filter: var(--data-theme) == 'dark' ? invert(1) : invert(0);
+}
+
+/* Print header */
+[data-theme="dark"] .print-header {
+    border-bottom-color: var(--gradient-start);
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.dropdown-item {
+    color: var(--text-primary);
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-tertiary);
+}
+
+/* Timeline */
+.timeline-item::before {
+    background-color: var(--gradient-start);
+}
+
+/* Badges */
+[data-theme="dark"] .badge {
+    filter: brightness(0.85);
+}
+
+/* Stat cards - keep gradient */
+.stat-card {
+    /* Keep original gradients, they look good in both modes */
+}
+
+/* Links */
+a {
+    color: var(--gradient-start);
+}
+
+a:hover {
+    color: var(--gradient-end);
+}
+
+/* Quick actions */
+.quick-action {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+/* Login page specific */
+[data-theme="dark"] .login-container {
+    background-color: var(--card-bg);
+}
+
+/* Calendar items */
+.calendar-item {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+/* Help page */
+[data-theme="dark"] .help-card {
+    background-color: var(--card-bg);
+}
+
+/* Account item */
+.account-item {
+    background-color: var(--bg-tertiary);
+}
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Print - always use light mode */
+@media print {
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #ffffff;
+        --text-primary: #000000;
+        --card-bg: #ffffff;
+    }
+}
+
+/* Dark mode toggle button animation */
+#darkModeToggle {
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(15deg);
+}
+
+#darkModeToggle i {
+    transition: transform 0.3s ease;
+}
+
+#darkModeToggle:active i {
+    transform: scale(0.9);
+}
